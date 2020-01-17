@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dason's Dictionary</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <!-- iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Dictionary PWA" />
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png" />
+    <!--The four links below are google fonts and icons-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--Favicon link below-->
+    <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon" />
+    <script src="client.js"></script>
+    <script src="service-worker.js"></script>
+    <!-- JQuery is utilized -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="description" content="A dictionary app" />
+    <meta name="theme-color" content="#2F3BA2" />
+  </head>
+
+  <body onload="update()">
+    <div class="grid-container">
+      <div class="nav" id="nav">
+        <i onclick="openNav()" class="material-icons md-48" id="icon1">menu</i>
+        <div class="hashtag">
+          <a href="#top"><p>Top</p></a>
+          <a onclick="toggleHistory()"><p id="hy">History</p></a>
+          <a onclick="random()"><p>Utter Randomness</p></a>
+          <a onclick="#4()"><p>Help</p></a>
+          <a id="icondownload" aria-label="Install" hidden
+            ><i class="fa fa-download"></i
+          ></a>
+        </div>
+      </div>
+      <div class="rubber" id="top"></div>
+      <div class="typography" id="typos">
+        <h1 id="typo1" onclick="test()">Dason's Dictionary</h1>
+        <h2 id="typo2">Comprehensive Repository of Contemporary English</h2>
+      </div>
+      <div class="banner" id="frontbanner">
+        <div class="bannertext">
+          <div id="typo3">
+            <p id="t1">Loading...</p>
+            <p id="t2"></p>
+          </div>
+          <h3 id="typo4">
+            Search for single words. We feature over 100,000 entries.
+          </h3>
+        </div>
+        <div class="search" id="supersearch">
+          <input
+            id="searchbar"
+            type="text"
+            placeholder="Search..."
+            autocomplete="off"
+            onclick="effect()"
+            aria-labelledby="supersearch searchbar"
+          />
+          <button
+            name="proto"
+            type="submit"
+            id="icon2"
+            onclick="search()"
+            aria-label="Button1"
+          >
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="error" id="er">
+        <h2 id="typo5">
+          It seems that you have an error. We are loading the results...
+        </h2>
+        <p id="typo6"></p>
+        <ul id="typo7"></ul>
+      </div>
+      <div class="definition" id="def">
+        <div class="alldefs" id="d1">
+          <div class="main">
+            <h2 class="headword" id="hw1">Dason</h2>
+            <h3 class="wordtype" id="wt1">proper noun</h3>
+            <div class="wordbranches" id="wb1">
+              the one and only, the fabulous and fantastic, the great and noble,
+              Dason.
+            </div>
+          </div>
+          <div class="pronounce" id="pro">
+            <p class="syllable">Da-son. Coder of this app.</p>
+            <div class="pronouncings" id="p1"></div>
+          </div>
+          <ol class="actualdef" id="ol1">
+            <li class="every">
+              &nbsp;A smart, well-dressed, respectable youth who spent his
+              Christmas creating this app.
+            </li>
+            <li class="every">
+              &nbsp;A hardworking boy who had his previous APIs fail him, and
+              had to start over.
+            </li>
+            <li class="every">
+              &nbsp;A miracle man who, despite his ill luck, managed to somehow
+              produce this dictionary.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="history" id="his"></div>
+      <div class="about" id="abt"></div>
+    </div>
+    <script src="addserviceworker.js"></script>
+    <script src="install.js"></script>
+  </body>
+</html>

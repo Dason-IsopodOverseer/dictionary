@@ -1,0 +1,674 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fdfdfd;
+  font-family: "Helvetica", "Verdana", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Inknut Antiqua", serif;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* NAVIGATION BAR STYLE BEGINS*/
+.nav {
+  background-color: aliceblue;
+  grid-area: nav;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Stay on top */
+  overflow: hidden; /* Disables scroll */
+  transition: 0.5s;
+  border-bottom: #505bda solid;
+  border-width: 1.5px;
+}
+
+.hashtag {
+  /* puts my items where they should go, and might work for giant screens*/
+  margin-left: calc(86% - 500px);
+  margin-top: 5px;
+}
+
+.nav a {
+  margin-left: 2.5vw;
+  float: left;
+  text-decoration: none;
+  font-family: "Merriweather", sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  color: dimgray;
+}
+
+/* style for responsive navigation */
+.nav.responsive {
+  background-color: #d3f4ff;
+  transition: 0.5s;
+  position: fixed;
+  top: 0;
+  height: auto;
+}
+
+.nav.responsive a {
+  margin: 0;
+  text-align: center;
+  float: none;
+  display: block;
+  font-size: 1em;
+}
+
+.nav.responsive p {
+  padding: 3px;
+}
+
+.nav p:hover {
+  color: black;
+}
+
+#icon1 {
+  font-size: 45px;
+  cursor: pointer;
+  position: fixed;
+  color: dimgray;
+  top: 1.2%;
+  display: none;
+}
+
+#icon1:hover {
+  color: black;
+}
+
+.typography {
+  position: fixed;
+  z-index: 1;
+  height: auto;
+  grid-area: typo;
+}
+
+#typo1 {
+  font-size: 37px;
+  letter-spacing: 0.05vw;
+  color: #207dff;
+  position: fixed;
+  top: -1.06em;
+  left: 1em;
+  z-index: 1; /* Puts it on top of navigation*/
+}
+
+#typo2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: dimgray;
+  position: fixed;
+  top: 3.1em;
+  left: 3.3em;
+  z-index: 1; /* Puts it on top of navigation*/
+}
+
+#icondownload i {
+  margin-top: 10px;
+  cursor: pointer;
+  color: dimgray;
+  font-size: 35px;
+  padding: 10px;
+}
+
+#icondownload i:hover {
+  color: black;
+}
+
+/* The purpose of this 'rubber' is simply to fill up space that the nav bar takes at the top of the screen. 
+Also adds highlight when user scrolls to top of screen*/
+.rubber {
+  grid-area: space;
+  height: 90px;
+  transition: 0.5s;
+}
+
+/* Navigation is responsive for tablets and tiny monitors*/
+@media (max-width: 1200px) {
+  #icon1 {
+    display: inline;
+    left: 87%;
+    padding: 5px;
+  }
+  .typography.mobile {
+    z-index: 1;
+  }
+  .nav {
+    height: 77px;
+  }
+  .nav a {
+    display: none;
+  }
+  .hashtag {
+    text-align: center;
+    padding-top: 77px;
+    margin-left: 0;
+  }
+  #typo2 {
+    display: none;
+  }
+  #icondownload i {
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    padding: 0;
+  }
+  .rubber {
+    height: 77px;
+  }
+}
+
+/* Navigation is responsive for phones */
+@media (max-width: 500px) {
+  .nav {
+    height: 54px;
+  }
+  .nav a {
+    display: none;
+  }
+  .nav.responsive a {
+    font-size: 15px;
+  }
+  .nav.responsive p {
+    padding: 0.7px;
+  }
+  #icon1 {
+    font-size: 32px;
+    padding: 0;
+    left: 86%;
+  }
+  #typo1 {
+    top: -16px;
+    left: 7px;
+    font-size: 20px;
+    padding: 2px;
+  }
+  .rubber {
+    height: 54px;
+  }
+  .hashtag {
+    padding-top: 40px;
+  }
+  #icondownload i {
+    font-size: 20px;
+  }
+}
+
+/* Navigation tiny. App does not lose functionality until screen width < 200px */
+@media (max-width: 300px) {
+  #typo1 {
+    top: -6px;
+    font-size: 15px;
+    padding: 2px;
+  }
+  #icon1 {
+    font-size: 30px;
+    padding: 2px;
+    left: 81%;
+  }
+}
+
+@media (max-width: 250px) {
+  #typo1 {
+    font-size: 13px;
+    top: -2px;
+  }
+  #icon1 {
+    left: 80%;
+  }
+}
+
+/* BANNER AND SEARCH BAR STYLE BEGINS */
+.banner {
+  grid-area: x;
+  background-image: url("images/pattern.png");
+  background-size: 17%;
+  height: auto;
+  width: 100%;
+  padding-bottom: 50px;
+  border-bottom: #ddd solid;
+  border-width: 2px;
+}
+
+.bannertext {
+  text-align: center;
+  height: auto;
+  margin-top: 24px;
+}
+
+#typo3 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#typo3 i {
+  color: #505bda;
+}
+
+#t1 {
+  font-size: 45px;
+}
+
+#t2 {
+  font-size: 45px;
+  opacity: 0;
+}
+
+#t1,
+#t2 {
+  display: inline;
+  transition: opacity 1s linear;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+#typo4 {
+  margin-top: 1.4em;
+  color: #207dff;
+}
+
+.search {
+  width: 100%;
+  max-width: 610px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+input[type="text"] {
+  background-color: #fdfdfd;
+  width: 90%;
+  padding: 8px;
+  font-size: 26px;
+  float: left;
+}
+
+#icon2 {
+  width: 10%;
+  color: #207dff;
+  text-align: center;
+  background-color: #ddd;
+  font-size: 26px;
+  float: left;
+  padding: 9px;
+  border: grey solid;
+  border-width: 1px;
+}
+
+#icon2:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* gets rid of snarky quotes for tablet and phone*/
+@media (max-width: 1200px) {
+  .banner {
+    padding-bottom: 30px;
+  }
+  #typo3 {
+    display: none;
+  }
+  #typo4 {
+    margin-top: 0.8em;
+    font-size: 23px;
+  }
+}
+
+/* search is responsive for phones */
+@media (max-width: 535px) {
+  .banner {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+  }
+  input[type="text"] {
+    width: 84%;
+  }
+  #icon2 {
+    width: 16%;
+  }
+  #typo4 {
+    margin-top: 0.7em;
+    font-size: 15px;
+  }
+}
+
+/* search is responsive for apple watch screens. No small screen will be the end of my app. */
+@media (max-width: 250px) {
+  input[type="text"] {
+    width: 70%;
+    padding: 4px;
+    font-size: 13px;
+  }
+  #icon2 {
+    width: 30%;
+    font-size: 13px;
+    padding: 4.5px;
+  }
+}
+
+/* ERROR SCREEN STYLE */
+.error {
+  display: none;
+  grid-area: e;
+  height: 0;
+  width: 100%;
+  background-color: #fdfdfd;
+  padding: 1em;
+}
+
+#typo5 {
+  color: #46b3e6;
+}
+
+#typo7 {
+  cursor: pointer;
+}
+
+/* Responsive errors */
+@media (max-width: 535px) {
+  #typo5 {
+    font-size: 0.8em;
+  }
+  #typo6 {
+    font-size: 0.6em;
+  }
+  #typo7 {
+    font-size: 0.7em;
+  }
+}
+
+/* DEFINITION STYLE BEGINS */
+.definition {
+  grid-area: define;
+  height: auto;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.alldefs {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-areas:
+    "main main"
+    "pro pro"
+    "ad ad";
+  grid-template-columns: repeat(2, 50%);
+  grid-row-gap: 2px;
+  border-bottom: aliceblue solid;
+  border-width: 5px;
+}
+
+.main {
+  grid-area: main;
+}
+
+.headword {
+  font-size: 50px;
+  float: left;
+  padding-top: 12px;
+  margin: 0;
+}
+
+.wordtype {
+  padding-left: 10px;
+  float: left;
+  font-style: italic;
+  font-size: 25px;
+  color: #207dff;
+  margin: 0;
+}
+
+.wordbranches {
+  float: left;
+  font-size: 1.2em;
+  padding-left: 8px;
+  padding-top: 40px;
+  word-wrap: break-word;
+  margin-bottom: 0;
+  color: dimgray;
+}
+
+.pronounce {
+  margin-top: 10px;
+  grid-area: pro;
+}
+
+.syllable {
+  padding-top: 2px;
+  color: darkblue;
+  float: left;
+  padding-right: 5px;
+  font-style: italic;
+  font-size: 22px;
+  margin: 0;
+}
+
+.pronouncings {
+  float: left;
+  color: black;
+  font-size: 22px;
+  padding-right: 5px;
+  margin: 0;
+  margin-top: 3px;
+  padding-left: 20px;
+}
+
+#p1 {
+  color: #46b3e6;
+}
+
+#p2 {
+  color: crimson;
+}
+
+#p3 {
+  color: limegreen;
+}
+
+#p4 {
+  color: goldenrod;
+}
+
+[title~="listen"]:hover {
+  font-size: 1.1em;
+}
+
+[title~="listen to 1"] {
+  color: #46b3e6;
+}
+
+[title~="listen to 2"] {
+  color: crimson;
+}
+
+[title~="listen to 3"] {
+  color: limegreen;
+}
+
+[title~="listen to 4"] {
+  color: goldenrod;
+}
+
+.actualdef {
+  grid-area: ad;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.every {
+  margin-bottom: 8px;
+}
+
+.actualdef i {
+  color: #505bda;
+  cursor: pointer;
+}
+
+/* results and pronunciation responsive for tablet */
+@media (max-width: 1200px) {
+  .headword {
+    font-size: 45px;
+  }
+
+  .wordtype {
+    font-size: 20px;
+  }
+
+  .wordbranches {
+    font-size: 15px;
+  }
+
+  .pronouncings {
+    font-size: 15px;
+  }
+
+  .syllable {
+    font-size: 17px;
+  }
+}
+
+/*  defintion responsive for large phones and small tablets. */
+@media (max-width: 700px) {
+  .headword {
+    font-size: 40px;
+  }
+
+  .wordtype {
+    font-size: 16px;
+  }
+
+  .wordbranches {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 5%;
+    font-size: 13px;
+  }
+
+  .pronouncings {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .syllable {
+    font-size: 15px;
+  }
+
+  .actualdef {
+    margin-bottom: 60px;
+  }
+  .every {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 500px) {
+  .definition {
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+/* results responsive for phones*/
+@media (max-width: 350px) {
+  #headword {
+    font-size: 35px;
+  }
+  #wordtype {
+    padding-left: 4px;
+    font-size: 12px;
+  }
+  #wordbranches {
+    font-size: 11px;
+  }
+  .every {
+    font-size: 0.7em;
+  }
+}
+
+/* HISTORY STYLE */
+.history {
+  grid-area: h;
+  width: 100%;
+  height: 0;
+  display: none;
+  padding: 10px;
+  position: fixed;
+  bottom: 0%;
+  left: 0;
+  background-color: aliceblue;
+  border-top: #505bda solid;
+  border-width: 1.5px;
+  z-index: 1;
+}
+
+.history strong {
+  padding: 3px;
+  padding-left: 20px;
+  color: dimgray;
+}
+
+.history strong:hover {
+  color: black;
+  cursor: pointer;
+}
+
+/* Responsive history items */
+@media (max-width: 535px) {
+  .history strong {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 230px) {
+  .history strong {
+    font-size: 0.5em;
+    padding-left: 10px;
+    padding: 1px;
+  }
+}
+
+/* ABOUT STYLE */
+.about {
+  grid-area: about;
+  height: 400px;
+  padding: 1em;
+  font-size: 20px;
+}
+
+/* My app is pretty linear with a top to bottom design and does not require shifting elements around responsively */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "typo typo"
+    "space space"
+    "x x"
+    "e e"
+    "define define"
+    "about about"
+    "h h";
+  grid-template-columns: repeat(2, 50%);
+}
