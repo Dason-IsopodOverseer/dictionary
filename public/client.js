@@ -1,7 +1,7 @@
 // Say hello to my variables!
 // Api stuff
 let urlhead = "https://dictionaryapi.com/api/v3/references/sd4/json/";
-let secret = "?key=cca66032-7472-4665-b9fa-848a6cd0a57a";
+let secret = "?key=";
 var mainurl;
 // raw url
 
